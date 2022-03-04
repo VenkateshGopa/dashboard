@@ -1,0 +1,138 @@
+<button onClick={show} id="dropdownButton" data-dropdown-toggle="dropdown" className=" relative float-right m-8 text-white  bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">Dropdown button <svg className="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path></svg></button>
+        <div id="dropdown" className=" absolute right-8 top-20 hidden z-10 w-44 text-base list-none bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700">
+            <ul className="py-1" aria-labelledby="dropdownButton">
+            <li>
+                <a href="#" className="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Dashboard</a>
+            </li>
+            <li>
+                <a href="#" className="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Settings</a>
+            </li>
+            <li>
+                <a href="#" className="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Earnings</a>
+            </li>
+            <li>
+                <a href="#" className="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Sign out</a>
+            </li>
+            </ul>
+        </div>
+
+
+        // setloading(true)
+        //   axios.request( {
+        //     method: 'GET',
+        //     url: `https://vaccovid-coronavirus-vaccine-and-treatment-tracker.p.rapidapi.com/api/npm-covid-data/country-report-iso-based/${states.Country}/${states.ThreeLetterSymbol}`,
+        //     headers: {
+        //       'x-rapidapi-host': 'vaccovid-coronavirus-vaccine-and-treatment-tracker.p.rapidapi.com',
+        //       'x-rapidapi-key': '0dcb4bd39fmshe0af6d8719d5217p172434jsn1f9be1248561'
+        //     }
+        //   }).then(function (response) {
+        //     // setstates(response.data);
+        //     setdata([{name:"ActiveCases" ,value:response.data[0].ActiveCases }, {name:"TotalDeaths" ,value:response.data[0].TotalDeaths},{name:"TotalRecovered" ,value: +response.data[0].TotalRecovered} ])
+        //     console.log(response.data);
+        //     setloading(false)
+        //   }).catch(function (error) {
+        //     console.error(error);
+        //   });
+
+
+        iso--------------------------------------------------------
+
+        // const [data, setdata] = useState<datatype[]>([]);
+  // const router = useRouter();
+  // useEffect(()=>{
+  //   if(!router.isReady) return;
+  //   const getdata = async() => {
+  //     const res= await axios.request({
+  //         method: 'GET',
+  //         url: 'https://vaccovid-coronavirus-vaccine-and-treatment-tracker.p.rapidapi.com/api/npm-covid-data/countries-name-ordered',
+  //         headers: {
+  //         'x-rapidapi-host': 'vaccovid-coronavirus-vaccine-and-treatment-tracker.p.rapidapi.com',
+  //         'x-rapidapi-key': '0dcb4bd39fmshe0af6d8719d5217p172434jsn1f9be1248561'
+  //         }
+  //     })
+  //    setdata(res.data.filter( (ele: { ThreeLetterSymbol: string }) => ele.ThreeLetterSymbol === router.query.iso));
+  // }
+  // getdata();
+  // },[router])
+  ------------------------------------------------------------------------------------------------------------------
+  PICCHART
+
+  //     const res= await axios.request({
+        //         method: 'GET',
+        //         url: 'https://vaccovid-coronavirus-vaccine-and-treatment-tracker.p.rapidapi.com/api/npm-covid-data/countries-name-ordered',
+        //         headers: {
+        //         'x-rapidapi-host': 'vaccovid-coronavirus-vaccine-and-treatment-tracker.p.rapidapi.com',
+        //         'x-rapidapi-key': '0dcb4bd39fmshe0af6d8719d5217p172434jsn1f9be1248561'
+        //         }
+        //     })
+        //    const search = res.data.find( (ele: { ThreeLetterSymbol: string }) => ele.ThreeLetterSymbol === router.query.iso)
+
+  ------------------------------------------------------------------------------------------------------------------
+
+
+import axios from "axios";
+import { NextPage } from "next";
+import { useEffect, useState } from "react";
+import { Legend, Line, LineChart, ResponsiveContainer, Tooltip, XAxis, YAxis } from "recharts";
+import Spinner from "./components/Spinner";
+
+const test1:NextPage = () =>{
+
+    const [data ,setdata]= useState([]);
+    // const [loading , setloading] = useState<boolean>(true);
+
+    useEffect(()=> {
+    
+        axios.request({
+            method: "GET",
+            url: "https://coingecko.p.rapidapi.com/coins/bitcoin/market_chart",
+            params: { vs_currency: "usd", days: "30" },
+            headers: {"x-rapidapi-host": "coingecko.p.rapidapi.com",
+            "x-rapidapi-key": "d69ecb9af6mshcaf62ccf31fb078p14d543jsn0a68e23b8093",
+        },
+    }).then(function (response: any) {
+        // const price :[] = []; 
+        // response.data.prices.map( (ele: any[]) => price.push({ x:ele[0], y:ele[1] }))
+        // setdata(price);
+        setdata(response.data)
+        // setloading(false)
+    }).catch(function (error: any) {
+        console.error(error);
+    }) },[])
+
+    return(
+        <div className="mt-32">
+            <p></p>
+            {console.log(data)}
+        {/* <p className="text-white text-5xl mx-6">Bitcoin</p>
+        {loading && <div className="m-16 p-12"><Spinner/></div>}    
+        {!loading &&
+            <ResponsiveContainer width="100%" height={250}>
+            <LineChart  data={data} >
+            <XAxis
+            tick={{ fill: "white" }}
+            dataKey="x"
+            padding={{ left: 30, right: 30 }}
+            style={{fontSize: '0.5rem',}}
+            />
+            <YAxis tick={{ fill: "white" }} style={{fontSize: '0.5rem',}}/>
+            <Tooltip />
+            <Legend />
+            <Line
+            type="monotone"
+            dataKey="y"
+            stroke="#8884d8"
+            activeDot={{ r: 8 }}
+            dot={false} 
+            />
+        </LineChart>
+        </ResponsiveContainer>} */}
+        </div>
+    );
+}
+
+export default test1;
+
+// function ele(ele: any) {
+//     throw new Error("Function not implemented.");
+// }

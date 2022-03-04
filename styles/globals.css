@@ -1,0 +1,106 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body {
+  background-color:  black;
+  color: black;
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+.box div{
+  width: 48%;
+  margin: 1%;
+}
+.home{
+  display: flex;
+  margin-top: 18vh;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.home div div{
+  height: 30vh;
+  overflow-y: scroll;
+}
+.countrygraph{
+  position: relative;
+  height: 80vh;
+  overflow-y: scroll;
+  top:10vh;
+}
+
+@media screen and (max-width:600px) {
+  .fontsmall p , .fontsmall div p{
+    font-size: 8px;
+  }
+  .font{
+    font-size: 20px;
+  }
+  .home{
+    margin-top: 16vh;
+  }
+}
+
+.dot-flashing {
+  position: relative;
+  width: 8px;
+  height: 8px;
+  border-radius: 5px;
+  margin: 20px;
+  background-color: black;
+  color: black;
+  animation: dotFlashing 1s infinite linear alternate;
+  animation-delay: .5s;
+}
+
+.dot-flashing::before, .dot-flashing::after {
+  content: '';
+  display: inline-block;
+  position: absolute;
+  top: 0;
+}
+
+.dot-flashing::before {
+  left: -15px;
+  width: 8px;
+  height: 8px;
+  border-radius: 5px;
+  background-color: black;
+  color: black;
+  animation: dotFlashing 1s infinite alternate;
+  animation-delay: 0s;
+}
+
+.dot-flashing::after {
+  left: 15px;
+  width: 8px;
+  height: 8px;
+  border-radius: 5px;
+  background-color: black;
+  color: black;
+  animation: dotFlashing 1s infinite alternate;
+  animation-delay: 1s;
+}
+
+@keyframes dotFlashing {
+  0% {
+    background-color: black;
+  }
+  50%,
+  100% {
+    background-color: white;
+  }
+}
