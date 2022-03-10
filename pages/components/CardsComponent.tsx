@@ -58,29 +58,29 @@ const CardsComponent = () =>{
         <div className=" flex justify-between mb-3 items-center">
         <label className="text-gray-600"> Choose State: </label>
         { states.length >1 &&
-        <select onChange={changehandler} className='w-2/6 bg-gray-900 text-slate-300'>
+        <select onChange={changehandler} className='w-2/6 dark:bg-gray-900 bg-gray-100 dark:text-slate-300 text-black'>
             {states.map((state) => <option key={state.province} value={state.province}>{state.province}</option>)}
         </select>}
         </div>
 
-        {loading && <div className='bg-neutral-900 rounded'><div className="p-20"><Spinner/></div></div>}    
+        {loading && <div className='dark:bg-neutral-900 bg-gray-100 rounded'><div className="p-20"><Spinner/></div></div>}    
         {!loading && <>
         <div className="box flex flex-wrap space-between ">
-        <div className="bg-neutral-900 p-3 ">
-            <p className="text-blue-300  md:text-xl lg:text-2xl pb-3">Confirmed Cases</p>
-            <p className="text-white">{selstate?.confirmed || states[0]?.confirmed}</p>
+        <div className="dark:bg-neutral-900 shadow-xl bg-gray-100 p-3 ">
+            <p className="dark:text-blue-300 text-blue-600  md:text-xl lg:text-2xl pb-3">Confirmed Cases</p>
+            <p className="dark:text-white text-black">{selstate?.confirmed || states[0]?.confirmed}</p>
         </div>
-        <div className="bg-neutral-900 p-3 ">
-            <p className="text-yellow-100  md:text-xl lg:text-2xl pb-3">Active Cases</p>
-            <p className="text-white">{selstate?.active || states[0]?.active}</p>
+        <div className="dark:bg-neutral-900 shadow-xl bg-gray-100 p-3 ">
+            <p className="dark:text-yellow-100 text-yellow-600  md:text-xl lg:text-2xl pb-3">Active Cases</p>
+            <p className="dark:text-white text-black">{selstate?.active || states[0]?.active}</p>
         </div>
-        <div className="bg-neutral-900 p-3 ">
-            <p className="text-green-200  md:text-xl lg:text-2xl pb-3">Recovered Cases</p>
-            <p className="text-white">{selstate?.recovered || states[0]?.recovered}</p>
+        <div className="dark:bg-neutral-900 shadow-xl bg-gray-100 p-3 ">
+            <p className="dark:text-green-200 text-green-600  md:text-xl lg:text-2xl pb-3">Recovered Cases</p>
+            <p className="dark:text-white text-black">{selstate?.recovered || states[0]?.recovered}</p>
         </div>
-        <div className="bg-neutral-900 p-3 ">
-            <p className="text-red-200 md:text-xl lg:text-2xl pb-3">Deaths</p>
-            <p className="text-white">{selstate?.deaths || states[0]?.deaths}</p>
+        <div className="dark:bg-neutral-900 shadow-xl bg-gray-100 p-3 ">
+            <p className="dark:text-red-200 text-red-600 md:text-xl lg:text-2xl pb-3">Deaths</p>
+            <p className="dark:text-white text-black">{selstate?.deaths || states[0]?.deaths}</p>
         </div>
         </div>
         </>

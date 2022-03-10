@@ -59,30 +59,30 @@ const Test:NextPage = () =>{
     <>
     <div className="flex flex-col mt-20 sm:mt-10 sm:flex-row items-start">
       <div className="w-11/12 m-3 sm:w-1/2 sm:m-10 ">
-        <p className="text-5xl sm:text-7xl text-white pb-10">Covid-19</p>
-        <p className="text-slate-300 pb-6">Global Cases</p>
+        <p className="text-5xl sm:text-7xl dark:text-white text-black pb-10">Covid-19</p>
+        <p className="dark:text-slate-300 text-black text-bold pb-6">Global Cases</p>
 
-        <div className="bg-neutral-900 p-3 ">
-            <p className="text-blue-200  md:text-sm lg:text-lg pb-1">Total Cases</p>
-            {!loading ? <p className="text-white pb-8  md:text-3xl lg:text-4xl">{global?.TotalCases}</p> : <Threedotsloading/>}
+        <div className="dark:bg-neutral-900 p-3 bg-gray-300 rounded shadow-xl ">
+            <p className="dark:text-blue-200  text-blue-600 md:text-sm lg:text-lg pb-1">Total Cases</p>
+            {!loading ? <p className="dark:text-white text-black pb-8  md:text-3xl lg:text-4xl">{global?.TotalCases}</p> : <Threedotsloading/>}
 
-            <p className="text-green-200 md:text-sm lg:text-lg pb-1">Recovered Cases</p>
-            {!loading ? <p className="text-white pb-8  md:text-3xl lg:text-4xl">{global?.TotalRecovered}</p> :<Threedotsloading/>}
+            <p className="dark:text-green-200 text-green-600 md:text-sm lg:text-lg pb-1">Recovered Cases</p>
+            {!loading ? <p className="dark:text-white text-black pb-8  md:text-3xl lg:text-4xl">{global?.TotalRecovered}</p> :<Threedotsloading/>}
             {/* <p className="text-white pb-8  md:text-3xl lg:text-4xl">{global?.TotalRecovered}</p> */}
 
-            <p className="text-yellow-200  md:text-sm lg:text-lg pb-1">Active Cases</p>
-            {!loading ? <p className="text-white pb-8  md:text-3xl lg:text-4xl">{global?.ActiveCases}</p> : <Threedotsloading/>}
+            <p className="dark:text-yellow-200 text-yellow-600 md:text-sm lg:text-lg pb-1">Active Cases</p>
+            {!loading ? <p className="dark:text-white text-black pb-8  md:text-3xl lg:text-4xl">{global?.ActiveCases}</p> : <Threedotsloading/>}
             {/* <p className="text-white pb-8  md:text-3xl lg:text-4xl">{global?.ActiveCases}</p> */}
 
-            <p className="text-red-200  md:text-sm lg:text-lg pb-1">Deaths</p>
-            {!loading ? <p className="text-white pb-8  md:text-3xl lg:text-4xl">{global?.TotalDeaths}</p> : <Threedotsloading/>}
+            <p className="dark:text-red-200 text-red-600  md:text-sm lg:text-lg pb-1">Deaths</p>
+            {!loading ? <p className="dark:text-white text-black pb-8  md:text-3xl lg:text-4xl">{global?.TotalDeaths}</p> : <Threedotsloading/>}
             {/* <p className="text-white pb-8  md:text-3xl lg:text-4xl">{ global?.TotalDeaths}</p> */}
         </div>
       </div>
     
     <div className="w-11/12 sm:w-1/2 countrygraph  overflow-y-scroll ">
-    <p className="text-slate-300 pb-6 m-3 sm:mx-10">Country Wise Cases</p>
-    {loading && <div className="w-3/4 py-72 m-auto bg-neutral-900"><Spinner/></div>}    
+    <p className="dark:text-slate-300 text-black text-bold pb-6 m-3 sm:mx-10">Country Wise Cases</p>
+    {loading && <div className="w-3/4 py-72 m-auto dark:bg-neutral-900 bg-gray-100"><Spinner/></div>}    
     {!loading &&
     <ResponsiveContainer width="100%" height={12000}>
     <BarChart 

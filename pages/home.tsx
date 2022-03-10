@@ -60,17 +60,17 @@ const Home: NextPage = () => {
 
   return (
   <>
-  <div className='home'>
+  <div className='home '>
   {/* <p className='text-white'>{global?.ActiveCases} {global?.TotalCases} { global?.TotalDeaths} {global?.TotalRecovered}</p> */}
-    <div className='p-5 py-12 w-11/12 bg-neutral-900 m-auto sm:p-20 sm:w-3/4 lg:w-1/2 rounded' >
+    <div className='p-5 py-12 w-11/12 bg-white dark:bg-neutral-900 m-auto sm:p-20 sm:w-3/4 lg:w-1/2 rounded shadow-xl' >
       {/* <div> */}
-      <p className='font text-white text-3xl'> Select a Country</p>
-      <input className='w-full my-10 h-8 bg-neutral-700 rounded px-2 text-slate-200' type="text" onChange={changeHandler} placeholder="Select a Country.."/>
+      <p className='font dark:text-white  text-black text-3xl'> Select a Country</p>
+      <input className='w-full my-10 h-8 bg-slate-200 dark:bg-neutral-700 rounded px-2 dark:text-slate-200 text-gray-900' type="text" onChange={changeHandler} placeholder="Select a Country.."/>
       {/* </div> */}
-      <p className='text-gray-400 text-sm pb-4'>Suggestions</p>
+      <p className='dark:text-gray-400 text-black text-sm pb-4'>Suggestions</p>
       <div className=''>
-      {data.length<=0 && <p className='text-slate-300'>No data Found</p>}
-      {data.length>0 && data.map( ele => <p onClick={() => submithandler(ele.Country, ele.ThreeLetterSymbol)} className='text-white hover:bg-black hover:cursor-pointer p-5 rounded' key={ele.Country}>{ele.Country.toUpperCase()}({ele?.ThreeLetterSymbol})</p>)}
+      {data.length<=0 && <p className='text-black dark:text-slate-300'>No data Found</p>}
+      {data.length>0 && data.map( ele => <p onClick={() => submithandler(ele.Country, ele.ThreeLetterSymbol)} className='text-black dark:text-white hover:text-white hover:bg-black hover:cursor-pointer p-5 rounded' key={ele.Country}>{ele.Country.toUpperCase()}({ele?.ThreeLetterSymbol})</p>)}
       </div>
     </div>
   </div>
