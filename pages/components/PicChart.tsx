@@ -53,10 +53,10 @@ export default function PieCharts() {
 
   return (
     <>
-    <div className='m-auto w-10/12 h-1/2 md:w-8/12 lg:w-7/12 md:h-full pt-10'> 
+    <div className='m-auto w-10/12 h-1/2 md:w-8/12 lg:w-7/12 md:h-full pt-10 '> 
     <label className="text-gray-600">Total Cases</label> 
     </div>
-    <div className='m-auto p-1 my-2 w-10/12 h-1/2 md:w-8/12 lg:w-7/12 md:h-full bg-neutral-900 md:p-10 mb-20 rounded'>
+    <div className='m-auto p-1 my-2 w-10/12 h-1/2 md:w-8/12 lg:w-7/12 md:h-full dark:bg-neutral-900 bg-gray-100 shadow-xl md:p-10 mb-20 rounded'>
         {loading && <div className="m-16 p-12 -z-10"><Spinner/></div>}
         {!loading && 
         <ResponsiveContainer width="100%" height={300}>

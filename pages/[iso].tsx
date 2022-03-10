@@ -33,7 +33,7 @@ const Country: NextPage = () => {
   return (
   <>
   <div className="m-auto w-10/12 h-1/2 md:w-8/12 lg:w-7/12 md:h-full mt-32">
-    <p className="text-3xl md:text-4xl lg:text-5xl text-white text-centerx">{data[0]?.Country.toUpperCase()}({data[0]?.ThreeLetterSymbol})</p>
+    <p className="text-3xl md:text-4xl lg:text-5xl dark:text-white text-black text-centerx">{data[0]?.Country.toUpperCase()}({data[0]?.ThreeLetterSymbol})</p>
   </div>
   {/* {console.log(data)} */}
   <LineGraphComponent/>
