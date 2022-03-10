@@ -24,6 +24,11 @@ a {
   width: 48%;
   margin: 1%;
 }
+#box div{
+  width: 48%;
+  margin: 1%;
+}
+
 .home{
   display: flex;
   margin-top: 18vh;
@@ -53,6 +58,10 @@ a {
     margin-top: 16vh;
   }
 }
+#box div{
+  width: 48%;
+  margin: 1%;
+}
 
 .dot-flashing {
   position: relative;
@@ -65,7 +74,10 @@ a {
   animation: dotFlashing 1s infinite linear alternate;
   animation-delay: .5s;
 }
-
+#box div{
+  width: 48%;
+  margin: 1%;
+}
 .dot-flashing::before, .dot-flashing::after {
   content: '';
   display: inline-block;
@@ -82,6 +94,10 @@ a {
   color: black;
   animation: dotFlashing 1s infinite alternate;
   animation-delay: 0s;
+}
+#box div{
+  width: 48%;
+  margin: 1%;
 }
 
 .dot-flashing::after {
@@ -117,6 +133,10 @@ a {
   opacity: 0;
   width: 0;
   height: 0;
+}
+#box div{
+  width: 48%;
+  margin: 1%;
 }
 
 .slider {
