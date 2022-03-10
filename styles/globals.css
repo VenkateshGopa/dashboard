@@ -24,6 +24,11 @@ a {
   width: 48%;
   margin: 1%;
 }
+#box div{
+  width: 48%;
+  margin: 1%;
+}
+
 .home{
   display: flex;
   margin-top: 18vh;
